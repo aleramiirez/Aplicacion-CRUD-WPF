@@ -1,0 +1,61 @@
+﻿<Page x:Class="Proyecto2Evaluacion.Pages.UpdatePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Proyecto2Evaluacion.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UpdateProduct">
+
+    <Border CornerRadius="0,10,10,0">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
+                <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Actualizar Producto" FontSize="35" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,160,0,20"/>
+
+            <!-- Selección del Producto -->
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,10">
+                <TextBlock Text="Producto:" VerticalAlignment="Center" FontSize="15"/>
+                <ComboBox x:Name="productComboBox" Width="300" VerticalAlignment="Center" Margin="10,0,0,0" SelectionChanged="ProductComboBox_SelectionChanged"/>
+            </StackPanel>
+
+            <!-- Nuevo Nombre del Producto -->
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,10">
+                <TextBlock Text="Nuevo Nombre:" VerticalAlignment="Center" FontSize="15"/>
+                <TextBox x:Name="productNameTextBox" Width="257" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <!-- Nueva Categoría del Producto -->
+            <StackPanel Grid.Row="3" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,10">
+                <TextBlock Text="Nueva Categoría:" VerticalAlignment="Center" FontSize="15"/>
+                <ComboBox x:Name="categoryComboBox" Width="250" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <!-- Nuevo Precio Unitario -->
+            <StackPanel Grid.Row="4" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,10">
+                <TextBlock Text="Nuevo Precio:" VerticalAlignment="Center" FontSize="15"/>
+                <TextBox x:Name="unitPriceTextBox" Width="275" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <!-- Espacio adicional -->
+            <TextBlock Grid.Row="5" Height="20"/>
+
+            <!-- Botón Actualizar Producto -->
+            <Button Grid.Row="6" Content="Actualizar Producto" Width="150" Height="30" Margin="0,20" Background="#FF0A0812" Foreground="#FF919DA3" HorizontalAlignment="Center" Click="UpdateProduct_Click"/>
+        </Grid>
+    </Border>
+</Page>

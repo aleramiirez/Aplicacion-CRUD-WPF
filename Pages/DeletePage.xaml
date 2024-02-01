@@ -1,0 +1,34 @@
+﻿<Page x:Class="Proyecto2Evaluacion.Pages.DeletePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Proyecto2Evaluacion.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DeletePage">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Border CornerRadius="0,10,10,0" Padding="20">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                    <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
+                    <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!-- Columna izquierda: Lista desplegable (ComboBox) -->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <TextBlock Text="Seleccione el nombre del producto que quiere eliminar" FontSize="15"/>
+                    <ComboBox x:Name="productComboBox" Width="Auto" Margin="0,10,0,0"/>
+                </StackPanel>
+
+                <!-- Columna derecha: DataGrid y Botón -->
+                <StackPanel Width="Auto" HorizontalAlignment="Center">
+                    <DataGrid x:Name="dataGridProductDetails" Width="650" Height="120" Margin="0,80,0,40" VerticalAlignment="Top"/>
+                    <Button Content="Eliminar Producto" Click="DeleteProduct" Width="150" Height="30" Background="#FF0A0812" Foreground="#FF919DA3" VerticalAlignment="Top"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </ScrollViewer>
+</Page>
