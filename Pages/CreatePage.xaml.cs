@@ -24,15 +24,16 @@ namespace Proyecto2Evaluacion.Pages
         public Page2()
         {
             InitializeComponent();
-            Loaded += CreateProduct_Loaded; // Manejador de evento para cargar las categorías al inicio
+            Loaded += CreateProduct_Loaded;
         }
 
+        // Llena el ComboBox con las categorías existentes al cargar la página
         private void CreateProduct_Loaded(object sender, RoutedEventArgs e)
         {
-            // Llena el ComboBox con las categorías existentes al cargar la página
             FillCategoryComboBox();
         }
 
+        // Este método realiza la consulta a la base de datos para obtener las categorías y las agrega al ComboBox categoryComboBox
         private void FillCategoryComboBox()
         {
             try
@@ -62,6 +63,7 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Este método recibe el nombre de una categoría como parámetro y devuelve el CategoryID correspondiente consultando la base de datos
         private int CategoryID(string categoryName)
         {
             try
@@ -93,6 +95,9 @@ namespace Proyecto2Evaluacion.Pages
             return 0;
         }
 
+        // Este método se ejecuta cuando se hace clic en el botón "Crear Producto". Su función es obtener la información del nuevo
+        // producto desde los controles de la interfaz de usuario (nombre, categoría, precio) y luego insertar esa información en la
+        // base de datos en la tabla products
         private void CreateProduct_Click(object sender, RoutedEventArgs e)
         {
             try

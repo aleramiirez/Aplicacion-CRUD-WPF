@@ -27,11 +27,13 @@ namespace Proyecto2Evaluacion.Pages
         {
             InitializeComponent();
 
-            Loaded += ReadPage_Loaded; //Para cargar los datos en el combobox
-            productComboBox.SelectionChanged += ProductComboBox_SelectionChanged; // Para manejar la selección en el combobox
+            Loaded += ReadPage_Loaded; 
+            productComboBox.SelectionChanged += ProductComboBox_SelectionChanged;
             productComboBox2.SelectionChanged += ProductComboBox_SelectionChanged2;
         }
 
+        // Este método se ejecuta cuando la página se carga. Su propósito es llenar los ComboBox productComboBox y productComboBox2
+        // con datos al iniciar la página
         private void ReadPage_Loaded(object sender, RoutedEventArgs e)
         {
             // Llena el ComboBox con nombres de productos
@@ -39,6 +41,7 @@ namespace Proyecto2Evaluacion.Pages
             FillProductComboBox2();
         }
 
+        // Este método llena el ComboBox productComboBox con nombres de productos
         private void FillProductComboBox()
         {
             try
@@ -68,6 +71,8 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Este método se ejecuta cuando cambia la selección en el productComboBox. Si hay un producto seleccionado,
+        // llama al método FillProductDetails para cargar los detalles del producto seleccionado en el dataGridProductDetails
         private void ProductComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (productComboBox.SelectedItem != null)
@@ -77,6 +82,8 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Este método obtiene los detalles del producto seleccionado (selectedProduct) de la base de datos y los muestra
+        // en el dataGridProductDetails
         private void FillProductDetails(string selectedProduct)
         {
             try
@@ -114,6 +121,7 @@ namespace Proyecto2Evaluacion.Pages
 
         // SEGUNDA PARTE
 
+        // Similar a FillProductComboBox, este método llena el ComboBox productComboBox2 con nombres de categorías
         private void FillProductComboBox2()
         {
             try
@@ -143,6 +151,8 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Este método se ejecuta cuando cambia la selección en productComboBox2. Si hay una categoría seleccionada, llama al
+        // método FillProductDetails2 para cargar los detalles de los productos asociados a esa categoría en el dataGridProductDetails2
         private void ProductComboBox_SelectionChanged2(object sender, SelectionChangedEventArgs e)
         {
             if (productComboBox2.SelectedItem != null)
@@ -152,6 +162,8 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Similar a FillProductDetails, este método obtiene los detalles de los productos asociados a la categoría seleccionada
+        // y los muestra en el dataGridProductDetails2
         private void FillProductDetails2(string selectedProduct)
         {
             try

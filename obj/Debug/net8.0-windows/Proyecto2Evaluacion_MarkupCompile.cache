@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\danie\source\repos\Aplicacion-CRUD-main\obj\Debug\net8.0-windows\
+C:\Desarrollo\2DAM\Interfaces\Proyecto2\Aplicacion-CRUD-main\obj\Debug\net8.0-windows\
 Proyecto2Evaluacion
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\danie\source\repos\Aplicacion-CRUD-main\App.xaml
+C:\Desarrollo\2DAM\Interfaces\Proyecto2\Aplicacion-CRUD-main\App.xaml
 10-2004767257
 
 12338614956
-216-347611433
+216-82482034
 LoginWindow.xaml;MainWindow.xaml;Pages\CreatePage.xaml;Pages\DeletePage.xaml;Pages\HomePage.xaml;Pages\InfoPage.xaml;Pages\ReadPage.xaml;Pages\UpdatePage.xaml;Styles\ButtonStyles.xaml;Styles\UIColors.xaml;
 
 False

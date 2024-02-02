@@ -14,18 +14,19 @@ namespace Proyecto2Evaluacion.Pages
         public UpdatePage()
         {
             InitializeComponent();
-            Loaded += UpdateProduct_Loaded; // Manejador de evento para cargar los productos y categorías al inicio
+            Loaded += UpdateProduct_Loaded; 
         }
 
+        // Este método se ejecuta cuando la página se carga. Su propósito es llenar los ComboBox productComboBox y
+        // categoryComboBox con datos al iniciar la página
         private void UpdateProduct_Loaded(object sender, RoutedEventArgs e)
         {
-            // Llena el ComboBox con los productos existentes al cargar la página
             FillProductComboBox();
 
-            // Llena el ComboBox con las categorías existentes al cargar la página
             FillCategoryComboBox();
         }
 
+        // Este método llena el ComboBox productComboBox con nombres de productos
         private void FillProductComboBox()
         {
             try
@@ -55,6 +56,7 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Similar a FillProductComboBox, este método llena el ComboBox categoryComboBox con nombres de categorías
         private void FillCategoryComboBox()
         {
             try
@@ -84,6 +86,8 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Este método se ejecuta cuando cambia la selección en productComboBox. Si hay un producto seleccionado,
+        // llama al método FillProductDetails para cargar los detalles del producto seleccionado en los controles de la página
         private void ProductComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (productComboBox.SelectedItem != null)
@@ -93,6 +97,8 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Este método obtiene los detalles del producto seleccionado (selectedProduct) de la base de datos y los muestra en
+        // los controles (productNameTextBox, unitPriceTextBox, y categoryComboBox) en la página
         private void FillProductDetails(string selectedProduct)
         {
             try
@@ -132,6 +138,7 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Este método selecciona la categoría correspondiente en el categoryComboBox utilizando el CategoryID
         private void SelectCategoryByID(int categoryID)
         {
             try
@@ -163,6 +170,8 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Este método se ejecuta cuando el usuario hace clic en el botón de actualización. Verifica si hay un producto
+        // seleccionado en productComboBox y, si es así, solicita confirmación al usuario antes de realizar la actualización
         private void UpdateProduct_Click(object sender, RoutedEventArgs e)
         {
             if (productComboBox.SelectedItem != null)
@@ -223,6 +232,7 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Este método obtiene el CategoryID de una categoría dada (categoryName) de la base de datos
         private int CategoryID(string categoryName)
         {
             try

@@ -25,16 +25,20 @@ namespace Proyecto2Evaluacion.Pages
         public DeletePage()
         {
             InitializeComponent();
-            Loaded += ReadPage_Loaded; //Para cargar los datos en el combobox
-            productComboBox.SelectionChanged += ProductComboBox_SelectionChanged; // Para manejar la selección en el combobox
+            Loaded += ReadPage_Loaded; 
+            productComboBox.SelectionChanged += ProductComboBox_SelectionChanged;
         }
 
+        // Este método se ejecuta cuando la página se carga. Su propósito es llenar el ComboBox productComboBox con
+        // datos al iniciar la página. Llama al método FillProductComboBox
         private void ReadPage_Loaded(object sender, RoutedEventArgs e)
         {
             // Llena el ComboBox con nombres de productos
             FillProductComboBox();
         }
 
+        // Este método llena el ComboBox productComboBox con nombres de productos. Realiza una consulta a la base de datos
+        // para obtener los nombres y los agrega al ComboBox
         private void FillProductComboBox()
         {
             try
@@ -64,6 +68,8 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Este método se ejecuta cuando cambia la selección en productComboBox. Si hay un producto seleccionado, llama al método
+        // FillProductDetails para cargar los detalles del producto seleccionado en el DataGrid de la página
         private void ProductComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (productComboBox.SelectedItem != null)
@@ -73,6 +79,8 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Este método obtiene los detalles del producto seleccionado (selectedProduct) de la base de datos y los
+        // muestra en el DataGrid (dataGridProductDetails) en la página
         private void FillProductDetails(string selectedProduct)
         {
             try
@@ -109,6 +117,9 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Este método se ejecuta cuando el usuario hace clic en el botón de eliminación. Verifica si hay un producto seleccionado en
+        // productComboBox y, si es así, solicita confirmación al usuario antes de realizar la eliminación. Si el usuario confirma, se
+        // elimina el producto de la base de datos y se actualiza el ComboBox y el DataGrid
         private void DeleteProduct(object sender, RoutedEventArgs e)
         {
             if (productComboBox.SelectedItem != null)
@@ -159,9 +170,9 @@ namespace Proyecto2Evaluacion.Pages
             }
         }
 
+        // Este método limpia los datos actuales del DataGrid dataGridProductDetails
         private void ClearProductDetails()
         {
-            // Limpiar los datos actuales del DataGrid
             dataGridProductDetails.ItemsSource = null;
         }
     }
